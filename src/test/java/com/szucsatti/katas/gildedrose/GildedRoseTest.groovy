@@ -26,7 +26,7 @@ public class GildedRoseTest {
 
 
 	@Test
-	public void qualityDegradesBeforeSellByDate(){
+	public void "quality degrades before sell by date"(){
 		def items = [new Item("Basketball", 1, FIVE) ] as Item[]
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
@@ -36,7 +36,7 @@ public class GildedRoseTest {
 
 
 	@Test
-	public void qualityDegradesAfterSellByDate(){
+	public void "quality degrades after sell by date passes"(){
 		def items = [ new Item("Basketball", -1, FIVE) ] as Item[]
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
@@ -45,7 +45,7 @@ public class GildedRoseTest {
 
 
 	@Test
-	public void qualityIsNeverNegative(){
+	public void "quality is never negative"(){
 		def items = [ new Item("Basketball", -1, ONE) ] as Item[]
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
@@ -53,7 +53,7 @@ public class GildedRoseTest {
 	}
 
 	@Test
-	public void agedBrieQualityIncreases(){
+	public void "aged brie's quality increases as time passes"(){
 		def items = [ new Item("Aged Brie", 4, ONE) ] as Item[]
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
@@ -61,7 +61,7 @@ public class GildedRoseTest {
 	}
 
 	@Test
-	public void agedBrieDoubleQualityIncreaseAfterSellInDate (){
+	public void "aged brie's quality quality increases by two afer sell by date passes" (){
 		def items = [ new Item("Aged Brie", ZERO, ONE) ] as Item[]
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
@@ -69,7 +69,7 @@ public class GildedRoseTest {
 	}
 
 	@Test
-	public void maximumQualityIsFifty(){
+	public void "maximum quality is fifty"(){
 		def items = [ new Item("Aged Brie", FOUR, MAX_QUALITY) ] as Item[]
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
@@ -77,7 +77,7 @@ public class GildedRoseTest {
 	}
 	
 	@Test
-	public void sulfurasNeverDecreasesInQuality(){
+	public void "sulfuras's quality never decreases"(){
 		def items = [ new Item("Sulfuras, Hand of Ragnaros", FOUR, TWO) ] as Item[]
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
@@ -85,7 +85,7 @@ public class GildedRoseTest {
 	}
 	
 	@Test
-	public void sulfurasNeverDecreasesInSellByDate(){
+	public void "sulfuras's sell by date never decreases"(){
 		def items = [ new Item("Sulfuras, Hand of Ragnaros", FOUR, TWO) ] as Item[]
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
@@ -93,7 +93,7 @@ public class GildedRoseTest {
 	}
 
 	@Test
-	public void backstagePassIncreasesInQualityBeforeSellByDate(){
+	public void "backstage passes increases in quality before sell by date"(){
 		def items = [ new Item("Backstage passes to a TAFKAL80ETC concert", ELEVEN, TWO) ] as Item[]
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
@@ -101,7 +101,7 @@ public class GildedRoseTest {
 	}
 	
 	@Test
-	public void backstagePassDoubleIncreaseInQualityBeforeSellByDate(){
+	public void "backstage pass's quality increases by two before sell by date"(){
 		def items = [ new Item("Backstage passes to a TAFKAL80ETC concert", TEN, TWO) ] as Item[]
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
@@ -109,7 +109,7 @@ public class GildedRoseTest {
 	}
 	
 	@Test
-	public void backstagePassTripleIncreaseInQualityBeforeSellByDate(){
+	public void "backstage pass's quality increases by three before sell by date"(){
 		def items = [ new Item("Backstage passes to a TAFKAL80ETC concert", FIVE, TWO) ] as Item[]
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
@@ -117,7 +117,7 @@ public class GildedRoseTest {
 	}
 	
 	@Test
-	public void backstagePassQualityDropsAfterSellByDate(){
+	public void "backstage pass's quality drops after sell by date passes"(){
 		def items = [ new Item("Backstage passes to a TAFKAL80ETC concert", ZERO, TWO) ] as Item[]
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
