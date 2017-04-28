@@ -1,0 +1,10 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+/*
+!/bin/
+!/src/
+!/.gitignore
+!/LICENSE.md
+!/pom.xml
+!/README.md
