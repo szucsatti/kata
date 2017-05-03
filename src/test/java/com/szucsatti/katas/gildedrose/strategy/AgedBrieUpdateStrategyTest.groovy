@@ -1,6 +1,6 @@
 package com.szucsatti.katas.gildedrose.strategy
 
-import org.junit.Test;
+import org.junit.Test
 
 import com.szucsatti.katas.gildedrose.Item
 import com.szucsatti.katas.gildedrose.TestBase
@@ -15,7 +15,7 @@ class AgedBrieUpdateStrategyTest extends TestBase{
 		assert (FIVE + 1) == item.quality
 		assert  1 == item.sellIn
 	}
-	
+
 	@Test
 	public void "maximum quality is fifty"(){
 		def item = createAgedBrieItem(2, MAX_QUALITY)
@@ -24,7 +24,7 @@ class AgedBrieUpdateStrategyTest extends TestBase{
 		assert MAX_QUALITY == item.quality
 		assert  1 == item.sellIn
 	}
-	
+
 	@Test
 	public void "aged brie quality increases by two after sell by date"(){
 		def item = createAgedBrieItem(-1, NINE)
@@ -34,9 +34,17 @@ class AgedBrieUpdateStrategyTest extends TestBase{
 		assert  -2 == item.sellIn
 	}
 
-	
+	@Test
+	public void "aged brie quality increases by two on sell by date"(){
+		def item = createAgedBrieItem(0, NINE)
+		def classToTest = new AgedBrieUpdateStrategy()
+		classToTest.updateQuality(item)
+		assert ELEVEN == item.quality
+		assert  -1 == item.sellIn
+	}
+
+
 	private Item createAgedBrieItem(int sellIn, int quality){
 		return new Item("Aged Brie", sellIn, quality);
 	}
-	
 }
