@@ -1,9 +1,9 @@
-package com.szucsatti.katas.gildedrose.strategy
+package com.szucsatti.kata.gildedrose.strategy
 
 import org.junit.Test
 
-import com.szucsatti.katas.gildedrose.Item
-import com.szucsatti.katas.gildedrose.TestBase
+import com.szucsatti.kata.gildedrose.Item
+import com.szucsatti.kata.gildedrose.TestBase
 
 class BackstagePassesUpdateStrategyTest extends TestBase{
 

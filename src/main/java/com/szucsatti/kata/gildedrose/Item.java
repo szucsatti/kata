@@ -1,4 +1,4 @@
-package com.szucsatti.katas.gildedrose;
+package com.szucsatti.kata.gildedrose;
 
 public class Item {
 

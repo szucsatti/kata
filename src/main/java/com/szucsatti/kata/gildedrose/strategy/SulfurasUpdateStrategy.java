@@ -1,6 +1,6 @@
-package com.szucsatti.katas.gildedrose.strategy;
+package com.szucsatti.kata.gildedrose.strategy;
 
-import com.szucsatti.katas.gildedrose.Item;
+import com.szucsatti.kata.gildedrose.Item;
 
 public class SulfurasUpdateStrategy implements UpdateStrategy {
 

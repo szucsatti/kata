@@ -1,6 +1,9 @@
-package com.szucsatti.katas.gildedrose;
+package com.szucsatti.kata.gildedrose;
 
 import org.junit.Test
+
+import com.szucsatti.kata.gildedrose.GildedRose;
+import com.szucsatti.kata.gildedrose.Item;
 
 public class GildedRoseTest extends TestBase {
 

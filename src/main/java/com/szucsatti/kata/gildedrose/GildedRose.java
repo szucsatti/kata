@@ -1,7 +1,7 @@
-package com.szucsatti.katas.gildedrose;
+package com.szucsatti.kata.gildedrose;
 
-import com.szucsatti.katas.gildedrose.factory.UpdateStrategyFactory;
-import com.szucsatti.katas.gildedrose.strategy.UpdateStrategy;
+import com.szucsatti.kata.gildedrose.factory.UpdateStrategyFactory;
+import com.szucsatti.kata.gildedrose.strategy.UpdateStrategy;
 
 class GildedRose {
 	Item[] items;
