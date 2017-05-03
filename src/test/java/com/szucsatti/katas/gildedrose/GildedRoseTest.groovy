@@ -21,6 +21,7 @@ public class GildedRoseTest extends TestBase {
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
 		assert (FIVE - 2) == classToTest.items[0].quality
+		assert  -2 == classToTest.items[0].sellIn
 	}
 
 
@@ -30,31 +31,39 @@ public class GildedRoseTest extends TestBase {
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
 		assert ZERO == classToTest.items[0].quality
+		assert -2 == classToTest.items[0].sellIn
 	}
 
+	
 	@Test
 	public void "aged brie's quality increases as time passes"(){
 		def items = [ new Item("Aged Brie", 4, ONE) ] as Item[]
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
 		assert TWO == classToTest.items[0].quality
+		assert THREE == classToTest.items[0].sellIn
 	}
 
+	
 	@Test
 	public void "aged brie's quality quality increases by two afer sell by date passes" (){
 		def items = [ new Item("Aged Brie", ZERO, ONE) ] as Item[]
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
 		assert THREE == classToTest.items[0].quality
+		assert -1 == classToTest.items[0].sellIn
 	}
 
+	
 	@Test
 	public void "maximum quality is fifty"(){
 		def items = [ new Item("Aged Brie", FOUR, MAX_QUALITY) ] as Item[]
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
 		assert MAX_QUALITY == classToTest.items[0].quality
+		assert THREE == classToTest.items[0].sellIn
 	}
+	
 	
 	@Test
 	public void "sulfuras's quality never decreases"(){
@@ -63,6 +72,7 @@ public class GildedRoseTest extends TestBase {
 		classToTest.updateQuality()
 		assert TWO == classToTest.items[0].quality
 	}
+	
 	
 	@Test
 	public void "sulfuras's sell by date never decreases"(){
@@ -78,7 +88,9 @@ public class GildedRoseTest extends TestBase {
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
 		assert THREE == classToTest.items[0].quality
+		assert TEN == classToTest.items[0].sellIn
 	}
+	
 	
 	@Test
 	public void "backstage pass's quality increases by two before sell by date"(){
@@ -86,7 +98,9 @@ public class GildedRoseTest extends TestBase {
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
 		assert FOUR == classToTest.items[0].quality
+		assert NINE == classToTest.items[0].sellIn
 	}
+	
 	
 	@Test
 	public void "backstage pass's quality increases by three before sell by date"(){
@@ -94,7 +108,9 @@ public class GildedRoseTest extends TestBase {
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
 		assert FIVE == classToTest.items[0].quality
+		assert FOUR == classToTest.items[0].sellIn
 	}
+	
 	
 	@Test
 	public void "backstage pass's quality drops after sell by date passes"(){
@@ -102,6 +118,7 @@ public class GildedRoseTest extends TestBase {
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
 		assert ZERO == classToTest.items[0].quality
+		assert -1 == classToTest.items[0].sellIn
 	}
 	
 }
