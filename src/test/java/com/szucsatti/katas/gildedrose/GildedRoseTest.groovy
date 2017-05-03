@@ -46,7 +46,7 @@ public class GildedRoseTest extends TestBase {
 
 	
 	@Test
-	public void "aged brie's quality quality increases by two afer sell by date passes" (){
+	public void "aged brie's quality increases by two afer sell by date passes" (){
 		def items = [ new Item("Aged Brie", ZERO, ONE) ] as Item[]
 		def classToTest = new GildedRose(items)
 		classToTest.updateQuality()
