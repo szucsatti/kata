@@ -13,7 +13,7 @@ public class BackstagePassesUpdateStrategy implements UpdateStrategy {
 	}
 
 	private int qualityIncrease(final Item item) {
-		if (item.getSellIn() < 0)
+		if (item.getSellIn() <= 0)
 			return item.getQuality() * -1;
 		int count = 1;
 		if (item.getSellIn() <= 10)

@@ -45,6 +45,15 @@ class BackstagePassesUpdateStrategyTest extends TestBase{
 		assert  -2 == item.sellIn
 	}
 
+	@Test
+	public void "backstage pass's quality drops on sell by date passes"(){
+		def item = createBackstagePassItem(0, FIVE)
+		def classToTest = new BackstagePassesUpdateStrategy()
+		classToTest.updateQuality(item)
+		assert 0 == item.quality
+		assert  -1 == item.sellIn
+	}
+
 
 	private Item createBackstagePassItem(int sellIn, int quality){
 		return new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
