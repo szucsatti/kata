@@ -9,5 +9,6 @@ public class StandardUpdateStrategy implements UpdateStrategy{
 		int actualQuality = item.getQuality();
 		int qualityDecrease = item.getSellIn() >= 0 ? 1 : 2;
 		item.setQuality(Math.max(actualQuality - qualityDecrease, 0));
+		item.decreaseSellIn();
 	}
 }

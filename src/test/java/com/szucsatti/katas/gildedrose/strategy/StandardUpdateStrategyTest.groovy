@@ -13,6 +13,7 @@ class StandardUpdateStrategyTest extends TestBase {
 		def classToTest = new StandardUpdateStrategy()
 		classToTest.updateQuality(item)
 		assert (FIVE - 1) == item.quality
+		assert  1 == item.sellIn
 	}
 	
 	
@@ -22,6 +23,7 @@ class StandardUpdateStrategyTest extends TestBase {
 		def classToTest = new StandardUpdateStrategy()
 		classToTest.updateQuality(item)
 		assert (FIVE - 2) == item.quality
+		assert -2 == item.sellIn
 	}
 	
 	
@@ -31,7 +33,9 @@ class StandardUpdateStrategyTest extends TestBase {
 		def classToTest = new StandardUpdateStrategy()
 		classToTest.updateQuality(item)
 		assert 0 == item.quality
+		assert -2 == item.sellIn
 	}
+	
 	
 	private Item createStandardItem(int sellIn, int quality ){
 		return new Item("Standard", sellIn, quality);
